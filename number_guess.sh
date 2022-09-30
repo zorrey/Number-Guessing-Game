@@ -97,7 +97,7 @@ GUESSES(){
 }
 
 EXIT(){
-  check for games with 0 number guessess and delete them
+  #check for games with 0 number guessess and delete them
   GAME_DEL=$($PSQL "DELETE FROM games WHERE guesses=0;")
       EMPTY_USERS=$($PSQL "SELECT user_id FROM users FULL JOIN games USING(user_id) WHERE guesses IS NULL;");
       if [[ ! -z $EMPTY_USERS ]]
